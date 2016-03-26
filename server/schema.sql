@@ -21,6 +21,7 @@ CREATE TABLE users (
 CREATE TABLE messages (
   /* Describe your table here.*/
   id INT AUTO_INCREMENT, 
+  text VARCHAR(120),
   fk_user INT,
   fk_room INT, 
   PRIMARY KEY (id), 
