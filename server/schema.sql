@@ -5,12 +5,6 @@ USE chat;
 
 /* Create other tables and define schemas for them here! */
 
-CREATE TABLE rooms (
-  /* Describe your table here.*/
-  id INT AUTO_INCREMENT, 
-  name VARCHAR(15), 
-  PRIMARY KEY (id)
-);
 CREATE TABLE users (
   /* Describe your table here.*/
   id INT AUTO_INCREMENT, 
@@ -22,13 +16,11 @@ CREATE TABLE messages (
   /* Describe your table here.*/
   id INT AUTO_INCREMENT, 
   text VARCHAR(120),
+  room VARCHAR(20), 
   fk_user INT,
-  fk_room INT, 
   PRIMARY KEY (id), 
   FOREIGN KEY (fk_user) 
-    REFERENCES users (id), 
-  FOREIGN KEY (fk_room) 
-    REFERENCES rooms (id)
+    REFERENCES users (id)
 );
 
 /*  Execute this file from the command line by typing:
